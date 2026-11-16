@@ -21,12 +21,12 @@ while opcion != 7:
     print("="*40)
     
     # Captura de la opción seleccionada por el usuario
-    opcion_str = input("Seleccione una opción (1-7): ")
+    opcion_str = int(input("Seleccione una opción (1-7): "))
     
-    # Validación simple: verifica si la entrada contiene solo dígitos usando isdigit()
-    if opcion_str.isdigit():
-        # Si es un dígito, lo convierte a entero para usarlo en las condiciones lógicas
-        opcion = int(opcion_str)
+    # Control de excepcion
+    try:
+        
+        opcion = opcion_str
         
         # OPCIÓN 1: Ingreso de Clientes
         if opcion == 1:
@@ -164,10 +164,10 @@ while opcion != 7:
                     
                     # VALIDACIÓN DE MENÚ: Opción fuera de rango
                     else:
-                        print("Debe ingresar un numero entre 1 y 3")
+                        print("\nError: Opción inválida. Por favor, seleccione un número del 1 al 3.")
 
                 except ValueError:
-                    print("Debe ingresar el numero de la opción que desee consultar")
+                    print("\nError: Debe ingresar un número válido (no letras ni símbolos).")
 
         # OPCIÓN 7: Salir del programa
         elif opcion == 7:
@@ -175,10 +175,10 @@ while opcion != 7:
             
         # VALIDACIÓN DE MENÚ: Opción fuera de rango
         else:
-            # Esta validación se ejecuta si el usuario ingresa un número, pero no está entre 1 y 6
-            print("\nError: Opción inválida. Por favor, seleccione un número del 1 al 6.")
+            # Esta validación se ejecuta si el usuario ingresa un número, pero no está entre 1 y 7
+            print("\nError: Opción inválida. Por favor, seleccione un número del 1 al 7.")
             
     # VALIDACIÓN DE MENÚ: Entrada no numérica
-    else:
-         # Esta validación se ejecuta si isdigit() es False (ej: si el usuario ingresó letras)
+    except ValueError:
+         # Esta excepcion se ejecuta si la opcion ingresada entrega un error de valor (ej: si el usuario ingresó letras)
          print("\nError: Debe ingresar un número válido (no letras ni símbolos).")
