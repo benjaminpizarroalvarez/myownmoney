@@ -20,12 +20,11 @@ while opcion != 7:
     print("7. Salir")
     print("="*40)
     
-    # Captura de la opción seleccionada por el usuario
-    opcion = int(input("Seleccione una opción (1-7): "))
-    
     # Control de excepcion
     try:
-        
+        # Captura de la opción seleccionada por el usuario
+        opcion = int(input("Seleccione una opción (1-7): "))
+
         # OPCIÓN 1: Ingreso de Clientes
         if opcion == 1:
             print("\n--- 1. REGISTRO DE CLIENTE ---")
